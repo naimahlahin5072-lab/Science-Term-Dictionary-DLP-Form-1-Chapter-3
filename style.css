@@ -1,0 +1,710 @@
+/* =========================================
+   BASIC
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f4f7fb;
+
+    color: #172033;
+
+    transition:
+        background 0.2s,
+        color 0.2s;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    background:
+        linear-gradient(
+            135deg,
+            #173b6c,
+            #2467a8
+        );
+
+    color: white;
+
+    padding: 35px 20px;
+}
+
+.header-inner {
+
+    width: min(
+        1100px,
+        100%
+    );
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.label {
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+.header h1 {
+
+    margin:
+        8px 0;
+
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            48px
+        );
+}
+
+.header p {
+
+    margin: 0;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   DARK MODE BUTTON
+========================================= */
+
+.theme-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    background:
+        rgba(255,255,255,0.18);
+
+    color: white;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.container {
+
+    width:
+        min(
+            1100px,
+            calc(100% - 30px)
+        );
+
+    margin:
+        30px auto;
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.search-box {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(0,0,0,0.07);
+}
+
+.search-box h2 {
+
+    margin-top: 0;
+}
+
+.search-input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.search-input-wrapper > span {
+
+    position: absolute;
+
+    left: 16px;
+}
+
+#searchInput {
+
+    width: 100%;
+
+    padding:
+        16px
+        45px
+        16px
+        45px;
+
+    border:
+        2px solid #d9e0ea;
+
+    border-radius: 12px;
+
+    font-size: 17px;
+
+    outline: none;
+}
+
+#searchInput:focus {
+
+    border-color:
+        #2467a8;
+}
+
+.clear-button {
+
+    position: absolute;
+
+    right: 10px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    display: none;
+}
+
+.search-info {
+
+    margin-top: 10px;
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TOPICS
+========================================= */
+
+.topics {
+
+    margin-top: 30px;
+}
+
+#topicButtons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.topic-button {
+
+    border: none;
+
+    background: white;
+
+    padding:
+        10px
+        16px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.06);
+}
+
+.topic-button.active {
+
+    background: #173b6c;
+
+    color: white;
+}
+
+
+/* =========================================
+   DICTIONARY
+========================================= */
+
+.dictionary {
+
+    margin-top: 35px;
+}
+
+.dictionary-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+}
+
+.dictionary-header h2 {
+
+    margin-bottom: 10px;
+}
+
+#totalTerms {
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter-section {
+
+    margin-top: 25px;
+}
+
+.letter-title {
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #173b6c;
+
+    margin-bottom: 10px;
+
+    border-bottom:
+        2px solid #dce4ef;
+
+    padding-bottom: 7px;
+}
+
+
+/* =========================================
+   TERM LIST
+========================================= */
+
+.term-list {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 12px;
+}
+
+.term-item {
+
+    background: white;
+
+    border-radius: 13px;
+
+    padding: 17px;
+
+    cursor: pointer;
+
+    border:
+        1px solid #e3e8ef;
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+
+.term-item:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 5px 16px
+        rgba(0,0,0,0.08);
+}
+
+.term-name {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #173b6c;
+}
+
+.term-topic {
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    color: #667085;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,0.55);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+}
+
+.modal-content {
+
+    width:
+        min(
+            700px,
+            100%
+        );
+
+    max-height:
+        90vh;
+
+    overflow-y: auto;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    position: relative;
+}
+
+.modal-close {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.modal-topic {
+
+    display: inline-block;
+
+    background: #e7f0fa;
+
+    color: #173b6c;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+.modal-content h2 {
+
+    color: #173b6c;
+
+    font-size: 32px;
+
+    margin:
+        15px 0;
+}
+
+.definition {
+
+    line-height: 1.7;
+
+    color: #3d4757;
+}
+
+.example-box {
+
+    margin-top: 20px;
+
+    padding: 16px;
+
+    background: #f3f6fa;
+
+    border-radius: 12px;
+
+    line-height: 1.6;
+}
+
+.related-box {
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   NO RESULTS
+========================================= */
+
+.no-results {
+
+    text-align: center;
+
+    background: white;
+
+    padding: 60px 20px;
+
+    margin-top: 30px;
+
+    border-radius: 18px;
+}
+
+.no-results > div {
+
+    font-size: 45px;
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    background: #172033;
+
+    color: white;
+
+    margin-top: 60px;
+}
+
+footer p {
+
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 750px) {
+
+    .term-list {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   PHONE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .container {
+
+        width:
+            calc(100% - 20px);
+    }
+
+    .header {
+
+        padding:
+            30px 15px;
+    }
+
+    .header-inner {
+
+        align-items:
+            flex-start;
+    }
+
+    .search-box {
+
+        padding:
+            18px;
+    }
+
+    .term-item {
+
+        padding:
+            15px;
+    }
+
+    .modal-content {
+
+        padding:
+            22px;
+    }
+
+    .modal-content h2 {
+
+        font-size: 26px;
+    }
+
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+body.dark {
+
+    background:
+        #111827;
+
+    color:
+        #e5e7eb;
+}
+
+body.dark .search-box,
+body.dark .term-item,
+body.dark .topic-button,
+body.dark .modal-content,
+body.dark .no-results {
+
+    background:
+        #1f2937;
+
+    color:
+        #e5e7eb;
+
+    border-color:
+        #374151;
+}
+
+body.dark #searchInput {
+
+    background:
+        #111827;
+
+    color:
+        white;
+
+    border-color:
+        #374151;
+}
+
+body.dark .term-name,
+body.dark .dictionary-header h2,
+body.dark .letter-title,
+body.dark .modal-content h2 {
+
+    color:
+        #8ec5ff;
+}
+
+body.dark .term-topic,
+body.dark .search-info,
+body.dark #totalTerms {
+
+    color:
+        #9ca3af;
+}
+
+body.dark .example-box {
+
+    background:
+        #111827;
+}
+
+body.dark .definition {
+
+    color:
+        #d1d5db;
+}
+
+body.dark .topic-button.active {
+
+    background:
+        #2467a8;
+
+    color:
+        white;
+}

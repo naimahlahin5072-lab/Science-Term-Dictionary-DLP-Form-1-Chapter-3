@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Dictionary | Form 1 DLP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div>
+                <div class="label">FORM 1 DLP SCIENCE</div>
+                <h1>🔬 Science Dictionary</h1>
+                <p>Chapter 3 • Science Terms</p>
+            </div> <button id="themeButton" class="theme-button"> 🌙 </button>
+        </div>
+    </header>
+    <main class="container"> <!-- SEARCH -->
+        <section class="search-box">
+            <h2>Find a Science Term</h2>
+            <div class="search-input-wrapper"> <span>🔎</span> <input id="searchInput" type="search"
+                    placeholder="Search a term..." autocomplete="off"> <button id="clearButton" class="clear-button"> ×
+                </button> </div>
+            <div class="search-info"> <span id="resultCount"></span> </div>
+        </section> <!-- TOPIC FILTER -->
+        <section class="topics">
+            <h2>Topics</h2>
+            <div id="topicButtons"></div>
+        </section> <!-- TERM LIST -->
+        <section class="dictionary">
+            <div class="dictionary-header">
+                <h2>📚 Chapter 3 Terms</h2> <span id="totalTerms"></span>
+            </div>
+            <div id="termsContainer"></div>
+        </section> <!-- TERM DETAILS -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content"> <button id="closeModal" class="modal-close"> × </button>
+                <div id="modalContent"></div>
+            </div>
+        </div> <!-- NO RESULTS -->
+        <div id="noResults" class="no-results hidden">
+            <div>🔍</div>
+            <h2>No term found</h2>
+            <p> Try another spelling or search for a different term. </p>
+        </div>
+    </main>
+    <footer> <strong>Science Dictionary</strong>
+        <p> Form 1 DLP • Chapter 3 </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
